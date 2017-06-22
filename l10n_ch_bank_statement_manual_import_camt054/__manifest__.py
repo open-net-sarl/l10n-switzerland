@@ -5,7 +5,7 @@
 {
     'name': 'Manual Camt.054 Import Wizard with BVR/ESR matching',
     'summary': 'Allows to manually import Swiss Camt.054 bank statements',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'accounting',
     'website': 'https://odoo-community.org/',
     'author': 'Open Net Sàrl, Odoo Community Association (OCA)',
