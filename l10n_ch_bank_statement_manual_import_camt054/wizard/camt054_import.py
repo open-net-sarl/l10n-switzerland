@@ -13,10 +13,20 @@ class Camt054ImportWizard(models.TransientModel):
 
     camt054file = fields.Binary('Camt.054 File')
 
+    fds_postfinance_file_id = fields.Many2one('fds.postfinance.file', domain=[('state', '=', 'draft')])
+
 
     @api.multi
     def import_camt054(self):
-        if not self.camt054file:
+        if self.camt054file and self.fds_postfinance_file_id:
+            raise exceptions.UserError(
+                _('Either select a local file or an FDS file!')
+            )
+        elif self.fds_postfinance_file_id:
+            data = self.fds_postfinance_file_id.data
+        elif self.camt054file:
+            data = self.camt054file
+        else:
             raise exceptions.UserError(
                 _('Please select a file first!')
             )
@@ -27,7 +37,7 @@ class Camt054ImportWizard(models.TransientModel):
         parser = self.env['account.bank.statement.import.camt.parser']
         statement_line_obj = self.env['account.bank.statement.line']
 
-        stmts_vals = parser.parse(base64.b64decode(self.camt054file))[2]
+        stmts_vals = parser.parse(base64.b64decode(data))[2]
         lines_vals = []
         for stmt_vals in stmts_vals:
             lines_vals.extend(stmt_vals['transactions'])
@@ -52,7 +62,7 @@ class Camt054ImportWizard(models.TransientModel):
                 'name': 'Camt.054 %s' % time.strftime(
                     "%Y-%m-%d_%H:%M:%S", time.gmtime()
                 ),
-                'datas': self.camt054file,
+                'datas': data,
                 'datas_fname': 'camt054-%s.xml' % time.strftime(
                     "%Y-%m-%d_%H:%M:%S", time.gmtime()
                 ),

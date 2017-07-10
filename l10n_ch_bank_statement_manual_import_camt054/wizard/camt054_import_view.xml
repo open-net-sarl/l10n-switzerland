@@ -9,6 +9,7 @@
         <form string="Camt.054 Import">
           <group width="525" colspan="4">
             <field name="camt054file"/>
+            <field name="fds_postfinance_file_id"/>
             <newline/>
             <footer colspan="4">
               <button name="import_camt054" string="Import" type="object" class="oe_highlight" colspan="2"/>
