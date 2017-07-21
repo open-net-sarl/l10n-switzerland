@@ -50,6 +50,10 @@ class FdsPostfinanceFile(models.Model):
         help='state of file'
     )
 
+    @api.multi
+    def name_get(self):
+        return [(f.id, f.filename or "") for f in self]
+
     ##################################
     #         Button action          #
     ##################################
