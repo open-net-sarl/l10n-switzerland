@@ -70,6 +70,12 @@ class Camt054ImportWizard(models.TransientModel):
                 'res_id': statement_id,
             },
         )
+
+        if self.fds_postfinance_file_id:
+            self.fds_postfinance_file_id.write({
+                'state': 'done',
+                'data': None,
+            })
         return {}
 
     def _match_ref(self, line_vals):
