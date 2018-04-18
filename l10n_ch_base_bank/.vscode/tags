@@ -1,0 +1,135 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AccountInvoice	../models/invoice.py	/^class AccountInvoice(models.Model):$/;"	kind:class	line:9
+Bank	../models/bank.py	/^class Bank(models.Model, BankCommon):$/;"	kind:class	line:80
+BankCommon	../models/bank.py	/^class BankCommon(object):$/;"	kind:class	line:11
+ResPartnerBank	../models/bank.py	/^class ResPartnerBank(models.Model, BankCommon):$/;"	kind:class	line:166
+TestBank	../tests/test_bank.py	/^class TestBank(common.TransactionCase):$/;"	kind:class	line:13
+TestBankType	../tests/test_bank_type.py	/^class TestBankType(common.TransactionCase):$/;"	kind:class	line:6
+TestCreateInvoice	../tests/test_create_invoice.py	/^class TestCreateInvoice(common.TransactionCase):$/;"	kind:class	line:7
+TestSearchInvoice	../tests/test_search_invoice.py	/^class TestSearchInvoice(common.TransactionCase):$/;"	kind:class	line:7
+__init__.py	../__init__.py	1;"	kind:file	line:1
+__init__.py	../models/__init__.py	1;"	kind:file	line:1
+__init__.py	../tests/__init__.py	1;"	kind:file	line:1
+__manifest__.py	../__manifest__.py	1;"	kind:file	line:1
+_check_5_pos_postal_num	../models/bank.py	/^    def _check_5_pos_postal_num(self, number):$/;"	kind:member	line:38
+_check_9_pos_postal_num	../models/bank.py	/^    def _check_9_pos_postal_num(self, number):$/;"	kind:member	line:17
+_check_adherent_number	../models/bank.py	/^    def _check_adherent_number(self):$/;"	kind:member	line:211
+_check_bank_type_for_type_isr	../models/invoice.py	/^    def _check_bank_type_for_type_isr(self):$/;"	kind:member	line:73
+_check_isr	../models/invoice.py	/^    def _check_isr(self):$/;"	kind:member	line:117
+_check_postal_num	../models/bank.py	/^    def _check_postal_num(self):$/;"	kind:member	line:108
+_check_postal_num	../models/bank.py	/^    def _check_postal_num(self):$/;"	kind:member	line:226
+_compile_check_isr_add_num	../models/bank.py	/^    _compile_check_isr_add_num = re.compile('[0-9]*$')$/;"	kind:variable	line:172
+_compute_acc_type	../models/bank.py	/^    def _compute_acc_type(self):$/;"	kind:member	line:190
+_convert_iban_to_ccp	../models/bank.py	/^    def _convert_iban_to_ccp(self, iban):$/;"	kind:member	line:54
+_convert_iban_to_clearing	../models/bank.py	/^    def _convert_iban_to_clearing(self, iban):$/;"	kind:member	line:69
+_get_acc_name	../models/bank.py	/^    def _get_acc_name(self):$/;"	kind:member	line:239
+_get_ch_bank_from_iban	../models/bank.py	/^    def _get_ch_bank_from_iban(self):$/;"	kind:member	line:263
+_get_reference_type	../models/invoice.py	/^    def _get_reference_type(self):$/;"	kind:member	line:56
+_inherit	../models/bank.py	/^    _inherit = 'res.bank'$/;"	kind:variable	line:82
+_inherit	../models/bank.py	/^    _inherit = 'res.partner.bank'$/;"	kind:variable	line:171
+_inherit	../models/invoice.py	/^    _inherit = "account.invoice"$/;"	kind:variable	line:11
+_is_isr_reference	../models/invoice.py	/^    def _is_isr_reference(self):$/;"	kind:member	line:93
+_search	../models/invoice.py	/^    def _search(self, args, offset=0, limit=None, order=None, count=False,$/;"	kind:member	line:13
+_sql_constraints	../models/bank.py	/^    _sql_constraints = [('isr_adherent_uniq', 'unique (isr_adherent_num, ccp)',$/;"	kind:variable	line:359
+acc_number	../models/bank.py	/^    acc_number = fields.Char($/;"	kind:variable	line:181
+assert_find_ref	../tests/test_search_invoice.py	/^    def assert_find_ref(self, reference, operator, value):$/;"	kind:member	line:28
+assert_not_find_ref	../tests/test_search_invoice.py	/^    def assert_not_find_ref(self, reference, operator, value):$/;"	kind:member	line:41
+bank.py	../models/bank.py	1;"	kind:file	line:1
+ccp	../models/bank.py	/^    ccp = fields.Char($/;"	kind:variable	line:184
+ccp	../models/bank.py	/^    ccp = fields.Char($/;"	kind:variable	line:96
+ch_iban	../tests/test_bank.py	/^ch_iban = 'CH15 3881 5158 3845 3843 7'$/;"	kind:variable	line:8
+ch_post_iban	../tests/test_bank.py	/^ch_post_iban = 'CH09 0900 0000 1000 8060 7'$/;"	kind:variable	line:9
+city	../models/bank.py	/^    city = fields.Char($/;"	kind:variable	line:92
+clearing	../models/bank.py	/^    clearing = fields.Char($/;"	kind:variable	line:88
+code	../models/bank.py	/^    code = fields.Char($/;"	kind:variable	line:84
+country_code	../models/bank.py	/^    country_code = fields.Char($/;"	kind:variable	line:101
+create	../models/invoice.py	/^    def create(self, vals):$/;"	kind:member	line:125
+fr_iban	../tests/test_bank.py	/^fr_iban = 'FR8387234133870990794002530'$/;"	kind:variable	line:10
+get_account_number	../models/bank.py	/^    def get_account_number(self):$/;"	kind:member	line:201
+help	../models/bank.py	/^        help="CCP\/CP-Konto of the bank"$/;"	kind:variable	line:99
+help	../models/bank.py	/^        help="City of the bank"$/;"	kind:variable	line:94
+help	../models/bank.py	/^        help="Your Bank adherent number to be printed "$/;"	kind:variable	line:177
+help	../models/bank.py	/^        help='Internal reference'$/;"	kind:variable	line:86
+help	../models/bank.py	/^        help='Swiss unique bank identifier also used in IBAN number'$/;"	kind:variable	line:90
+invoice.py	../models/invoice.py	1;"	kind:file	line:1
+is_swiss_post	../models/bank.py	/^    def is_swiss_post(self):$/;"	kind:member	line:121
+is_swiss_postal_num	../models/bank.py	/^    def is_swiss_postal_num(self, number):$/;"	kind:member	line:13
+isr_adherent_num	../models/bank.py	/^    isr_adherent_num = fields.Char($/;"	kind:variable	line:174
+migrate	../migrations/11.0.1.1.0/post-migration.py	/^def migrate(env, version):$/;"	kind:function	line:16
+name_get	../models/bank.py	/^    def name_get(self):$/;"	kind:member	line:125
+name_search	../models/bank.py	/^    def name_search(self, name, args=None, operator='ilike', limit=80):$/;"	kind:member	line:135
+oldname	../models/bank.py	/^        oldname='bvr_adherent_num',$/;"	kind:variable	line:176
+onchange_acc_number_set_swiss_bank	../models/bank.py	/^    def onchange_acc_number_set_swiss_bank(self):$/;"	kind:member	line:272
+onchange_bank_set_acc_number	../models/bank.py	/^    def onchange_bank_set_acc_number(self):$/;"	kind:member	line:337
+onchange_ccp_set_empty_acc_number	../models/bank.py	/^    def onchange_ccp_set_empty_acc_number(self):$/;"	kind:member	line:313
+onchange_partner_set_acc_number	../models/bank.py	/^    def onchange_partner_set_acc_number(self):$/;"	kind:member	line:354
+onchange_reference	../models/invoice.py	/^    def onchange_reference(self):$/;"	kind:member	line:62
+post-migration.py	../migrations/11.0.1.1.0/post-migration.py	1;"	kind:file	line:1
+readonly	../models/bank.py	/^        readonly=True,$/;"	kind:variable	line:104
+reference_type_bvr_to_isr	../migrations/11.0.1.1.0/post-migration.py	/^def reference_type_bvr_to_isr(cr):$/;"	kind:function	line:7
+related	../models/bank.py	/^        related="country.code",$/;"	kind:variable	line:103
+setUp	../tests/test_bank.py	/^    def setUp(self):$/;"	kind:member	line:333
+setUp	../tests/test_bank_type.py	/^    def setUp(self):$/;"	kind:member	line:35
+setUp	../tests/test_create_invoice.py	/^    def setUp(self):$/;"	kind:member	line:98
+setUp	../tests/test_search_invoice.py	/^    def setUp(self):$/;"	kind:member	line:9
+size	../models/bank.py	/^        size=11,$/;"	kind:variable	line:98
+store	../models/bank.py	/^        store=True$/;"	kind:variable	line:186
+string	../models/bank.py	/^        string="Country code",$/;"	kind:variable	line:102
+string	../models/bank.py	/^        string='Account\/IBAN Number'$/;"	kind:variable	line:182
+string	../models/bank.py	/^        string='CCP\/CP-Konto',$/;"	kind:variable	line:185
+string	../models/bank.py	/^        string='CCP\/CP-Konto',$/;"	kind:variable	line:97
+string	../models/bank.py	/^        string='City',$/;"	kind:variable	line:93
+string	../models/bank.py	/^        string='Clearing number',$/;"	kind:variable	line:89
+string	../models/bank.py	/^        string='Code',$/;"	kind:variable	line:85
+test_bank.py	../tests/test_bank.py	1;"	kind:file	line:1
+test_bank_acc_number_not_defined	../tests/test_bank.py	/^    def test_bank_acc_number_not_defined(self):$/;"	kind:member	line:96
+test_bank_ccp	../tests/test_bank.py	/^    def test_bank_ccp(self):$/;"	kind:member	line:63
+test_bank_ccp_no_found	../tests/test_bank.py	/^    def test_bank_ccp_no_found(self):$/;"	kind:member	line:75
+test_bank_ccp_no_partner	../tests/test_bank.py	/^    def test_bank_ccp_no_partner(self):$/;"	kind:member	line:314
+test_bank_iban	../tests/test_bank.py	/^    def test_bank_iban(self):$/;"	kind:member	line:15
+test_bank_iban_foreign	../tests/test_bank.py	/^    def test_bank_iban_foreign(self):$/;"	kind:member	line:51
+test_bank_iban_lower_case	../tests/test_bank.py	/^    def test_bank_iban_lower_case(self):$/;"	kind:member	line:39
+test_bank_iban_with_spaces	../tests/test_bank.py	/^    def test_bank_iban_with_spaces(self):$/;"	kind:member	line:27
+test_bank_type.py	../tests/test_bank_type.py	1;"	kind:file	line:1
+test_ccp	../tests/test_bank.py	/^    def test_ccp(self):$/;"	kind:member	line:105
+test_constraint_adherent_number	../tests/test_bank.py	/^    def test_constraint_adherent_number(self):$/;"	kind:member	line:216
+test_constraint_ccp	../tests/test_bank.py	/^    def test_constraint_ccp(self):$/;"	kind:member	line:201
+test_constraint_ccp_at_bank	../tests/test_bank.py	/^    def test_constraint_ccp_at_bank(self):$/;"	kind:member	line:211
+test_create_invoice.py	../tests/test_create_invoice.py	1;"	kind:file	line:1
+test_emit_invoice_with_isr_reference	../tests/test_create_invoice.py	/^    def test_emit_invoice_with_isr_reference(self):$/;"	kind:member	line:9
+test_emit_invoice_with_isr_reference_15_pos	../tests/test_create_invoice.py	/^    def test_emit_invoice_with_isr_reference_15_pos(self):$/;"	kind:member	line:25
+test_emit_invoice_with_isr_reference_missing_ccp	../tests/test_create_invoice.py	/^    def test_emit_invoice_with_isr_reference_missing_ccp(self):$/;"	kind:member	line:78
+test_emit_invoice_with_missing_isr_reference	../tests/test_create_invoice.py	/^    def test_emit_invoice_with_missing_isr_reference(self):$/;"	kind:member	line:59
+test_emit_invoice_with_non_isr_reference	../tests/test_create_invoice.py	/^    def test_emit_invoice_with_non_isr_reference(self):$/;"	kind:member	line:43
+test_get_account_number	../tests/test_bank.py	/^    def test_get_account_number(self):$/;"	kind:member	line:225
+test_iban_ccp	../tests/test_bank.py	/^    def test_iban_ccp(self):$/;"	kind:member	line:117
+test_iban_ccp_with_spaces	../tests/test_bank.py	/^    def test_iban_ccp_with_spaces(self):$/;"	kind:member	line:129
+test_is_bank_account_with_post	../tests/test_bank_type.py	/^    def test_is_bank_account_with_post(self):$/;"	kind:member	line:8
+test_is_postal_account	../tests/test_bank_type.py	/^    def test_is_postal_account(self):$/;"	kind:member	line:22
+test_multiple_isr_bank_account_for_same_partner	../tests/test_bank.py	/^    def test_multiple_isr_bank_account_for_same_partner(self):$/;"	kind:member	line:285
+test_name_search	../tests/test_bank.py	/^    def test_name_search(self):$/;"	kind:member	line:271
+test_onchange_bank_empty_acc_number	../tests/test_bank.py	/^    def test_onchange_bank_empty_acc_number(self):$/;"	kind:member	line:238
+test_onchange_post_bank_ccp_in_acc_number	../tests/test_bank.py	/^    def test_onchange_post_bank_ccp_in_acc_number(self):$/;"	kind:member	line:260
+test_onchange_post_bank_empty_acc_number	../tests/test_bank.py	/^    def test_onchange_post_bank_empty_acc_number(self):$/;"	kind:member	line:249
+test_other_bank	../tests/test_bank.py	/^    def test_other_bank(self):$/;"	kind:member	line:141
+test_search_different	../tests/test_search_invoice.py	/^    def test_search_different(self):$/;"	kind:member	line:100
+test_search_eqlike_whitespace_raw	../tests/test_search_invoice.py	/^    def test_search_eqlike_whitespace_raw(self):$/;"	kind:member	line:88
+test_search_eqlike_whitespace_wildcards	../tests/test_search_invoice.py	/^    def test_search_eqlike_whitespace_wildcards(self):$/;"	kind:member	line:94
+test_search_equal_strict	../tests/test_search_invoice.py	/^    def test_search_equal_strict(self):$/;"	kind:member	line:54
+test_search_equal_whitespace_left	../tests/test_search_invoice.py	/^    def test_search_equal_whitespace_left(self):$/;"	kind:member	line:66
+test_search_equal_whitespace_right	../tests/test_search_invoice.py	/^    def test_search_equal_whitespace_right(self):$/;"	kind:member	line:60
+test_search_invoice.py	../tests/test_search_invoice.py	1;"	kind:file	line:1
+test_search_like_whitespace_both	../tests/test_search_invoice.py	/^    def test_search_like_whitespace_both(self):$/;"	kind:member	line:82
+test_search_like_whitespace_left	../tests/test_search_invoice.py	/^    def test_search_like_whitespace_left(self):$/;"	kind:member	line:77
+test_search_like_whitespace_right	../tests/test_search_invoice.py	/^    def test_search_like_whitespace_right(self):$/;"	kind:member	line:72
+test_search_other_field	../tests/test_search_invoice.py	/^    def test_search_other_field(self):$/;"	kind:member	line:105
+test_search_unary_operator	../tests/test_search_invoice.py	/^    def test_search_unary_operator(self):$/;"	kind:member	line:118
+test_set_ccp	../tests/test_bank.py	/^    def test_set_ccp(self):$/;"	kind:member	line:155
+test_set_ccp_bank	../tests/test_bank.py	/^    def test_set_ccp_bank(self):$/;"	kind:member	line:166
+test_set_ccp_post	../tests/test_bank.py	/^    def test_set_ccp_post(self):$/;"	kind:member	line:178
+test_set_ccp_unknown	../tests/test_bank.py	/^    def test_set_ccp_unknown(self):$/;"	kind:member	line:190

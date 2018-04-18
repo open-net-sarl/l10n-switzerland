@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2012-2017 Camptocamp
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import re
@@ -99,6 +98,11 @@ class Bank(models.Model, BankCommon):
         size=11,
         help="CCP/CP-Konto of the bank"
     )
+    country_code = fields.Char(
+        string="Country code",
+        related="country.code",
+        readonly=True,
+    )
 
     @api.constrains('ccp')
     def _check_postal_num(self):
@@ -165,12 +169,13 @@ class ResPartnerBank(models.Model, BankCommon):
 
     """
     _inherit = 'res.partner.bank'
-    _compile_check_bvr_add_num = re.compile('[0-9]*$')
+    _compile_check_isr_add_num = re.compile('[0-9]*$')
 
-    bvr_adherent_num = fields.Char(
-        string='Bank BVR/ESR adherent number', size=11,
+    isr_adherent_num = fields.Char(
+        string='Bank ISR adherent number', size=11,
+        oldname='bvr_adherent_num',
         help="Your Bank adherent number to be printed "
-             "in references of your BVR/ESR. "
+             "in references of your ISR. "
              "This is not a postal account number."
         )
     acc_number = fields.Char(
@@ -181,14 +186,16 @@ class ResPartnerBank(models.Model, BankCommon):
         store=True
     )
 
-    @api.one
     @api.depends('acc_number')
     def _compute_acc_type(self):
-        if (self.acc_number and
-                self.is_swiss_postal_num(self.acc_number)):
-            self.acc_type = 'postal'
-            return
-        super(ResPartnerBank, self)._compute_acc_type()
+        todo = self.env['res.partner.bank']
+        for rec in self:
+            if (rec.acc_number and
+                    rec.is_swiss_postal_num(rec.acc_number)):
+                rec.acc_type = 'postal'
+                continue
+            todo |= rec
+        super(ResPartnerBank, todo)._compute_acc_type()
 
     @api.multi
     def get_account_number(self):
@@ -200,17 +207,17 @@ class ResPartnerBank(models.Model, BankCommon):
         else:
             return self.acc_number
 
-    @api.constrains('bvr_adherent_num')
+    @api.constrains('isr_adherent_num')
     def _check_adherent_number(self):
         for p_bank in self:
-            if not p_bank.bvr_adherent_num:
+            if not p_bank.isr_adherent_num:
                 continue
-            valid = self._compile_check_bvr_add_num.match(
-                p_bank.bvr_adherent_num
+            valid = self._compile_check_isr_add_num.match(
+                p_bank.isr_adherent_num
             )
             if not valid:
                 raise exceptions.ValidationError(
-                    _('Your bank BVR/ESR adherent number must contain only '
+                    _('Your bank ISR adherent number must contain only '
                       'digits!\nPlease check your company bank account.')
                 )
         return True
@@ -231,7 +238,7 @@ class ResPartnerBank(models.Model, BankCommon):
     @api.multi
     def _get_acc_name(self):
         """ Return an account name for a bank account
-        to use with a ccp for BVR.
+        to use with a ccp for ISR.
         This method make sure to generate a unique name
         """
         part_name = self.partner_id.name
@@ -349,5 +356,5 @@ class ResPartnerBank(models.Model, BankCommon):
             if 'Bank/CCP' in self.acc_number:
                 self.acc_number = self._get_acc_name()
 
-    _sql_constraints = [('bvr_adherent_uniq', 'unique (bvr_adherent_num)',
-                         'The BVR adherent number must be unique !')]
+    _sql_constraints = [('isr_adherent_uniq', 'unique (isr_adherent_num, ccp)',
+                         'The ISR adherent number/ccp pair must be unique !')]
